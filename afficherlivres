@@ -1,0 +1,8 @@
+def afficher_livres(bibliotheque):
+    if not bibliotheque:
+        print("Aucun livre dans la bibliothèque.")
+        return
+    for livre in bibliotheque:
+        lu = "Lu" if livre["Lu"] else "Non Lu"
+        note = livre["Note"] if livre["Note"] is not None else "Aucune"
+        print(f"ID: {livre['ID']} - Titre: {livre['Titre']} - Auteur: {livre['Auteur']} - Année: {livre['Année']} - Statut: {lu} - Note: {note}")
