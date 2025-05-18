@@ -1,0 +1,9 @@
+def rechercher_livre(bibliotheque):
+    mot_cle = input("Entrez un mot-clé pour la recherche (dans le titre ou l'auteur) : ").lower()
+    livres_trouves = [livre for livre in bibliotheque if mot_cle in livre['Titre'].lower() or mot_cle in livre['Auteur'].lower()]
+    
+    if livres_trouves:
+        for livre in livres_trouves:
+            print(f"ID: {livre['ID']} - Titre: {livre['Titre']} - Auteur: {livre['Auteur']}")
+    else:
+        print("Aucun livre trouvé.")
