@@ -1,0 +1,11 @@
+
+def marquer_comme_lu(bibliotheque):
+    id_livre = int(input("Entrez l'ID du livre que vous avez lu : "))
+    livre = next((livre for livre in bibliotheque if livre["ID"] == id_livre), None)
+    if livre:
+        livre["Lu"] = True
+        livre["Note"] = int(input("Entrez une note sur 10 : "))
+        livre["Commentaire"] = input("Entrez un commentaire (optionnel) : ")
+        print(f"Le livre '{livre['Titre']}' est marqué comme lu.")
+    else:
+        print("Livre introuvable.")
