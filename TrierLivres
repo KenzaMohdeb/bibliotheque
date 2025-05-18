@@ -1,0 +1,21 @@
+def trier_livres(bibliotheque):
+    print("\nTrier par :")
+    print("1. Année")
+    print("2. Auteur")
+    print("3. Note")
+    choix = input("Choix (1-3) : ")
+
+    if choix == '1':
+        livres_tries = sorted(bibliotheque, key=lambda x: x['Année'])
+    elif choix == '2':
+        livres_tries = sorted(bibliotheque, key=lambda x: x['Auteur'].lower())
+    elif choix == '3':
+        livres_tries = sorted(bibliotheque, key=lambda x: (x['Note'] is None, x['Note']))
+    else:
+        print("Choix invalide.")
+        return
+
+    print("\nLivres triés :")
+    for livre in livres_tries:
+        note = livre["Note"] if livre["Note"] is not None else "Aucune"
+        print(f"ID: {livre['ID']} - Titre: {livre['Titre']} - Auteur: {livre['Auteur']} - Année: {livre['Année']} - Note: {note}")
