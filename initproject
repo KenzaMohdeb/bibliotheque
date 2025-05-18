@@ -1,0 +1,8 @@
+import json
+
+def charger_bibliotheque():
+    try:
+        with open("bibliotheque.json", "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []  # Si le fichier n'existe pas, retourne une liste vide.
