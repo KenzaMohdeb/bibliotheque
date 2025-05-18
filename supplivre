@@ -1,0 +1,12 @@
+def supprimer_livre(bibliotheque):
+    id_livre = int(input("Entrez l'ID du livre à supprimer : "))
+    livre_a_supprimer = next((livre for livre in bibliotheque if livre["ID"] == id_livre), None)
+    if livre_a_supprimer:
+        confirmation = input(f"Êtes-vous sûr de vouloir supprimer le livre '{livre_a_supprimer['Titre']}' ? (o/n) ")
+        if confirmation.lower() == 'o':
+            bibliotheque.remove(livre_a_supprimer)
+            print("Livre supprimé.")
+        else:
+            print("Suppression annulée.")
+    else:
+        print("Livre introuvable.")
