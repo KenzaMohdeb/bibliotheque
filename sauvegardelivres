@@ -1,0 +1,3 @@
+def sauvegarder_bibliotheque(bibliotheque):
+    with open("bibliotheque.json", "w") as f:
+        json.dump(bibliotheque, f, indent=4)
