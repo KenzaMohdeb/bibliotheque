@@ -1,0 +1,19 @@
+def afficher_livres_lus_ou_non_lus(bibliotheque):
+    choix = input("Voulez-vous afficher les livres (1) Lus ou (2) Non lus ? Entrez 1 ou 2 : ")
+    if choix == '1':
+        livres = [livre for livre in bibliotheque if livre["Lu"]]
+        titre = "Livres lus"
+    elif choix == '2':
+        livres = [livre for livre in bibliotheque if not livre["Lu"]]
+        titre = "Livres non lus"
+    else:
+        print("Choix invalide.")
+        return
+
+    print(f"\n{titre} :")
+    if not livres:
+        print("Aucun livre trouvé.")
+    else:
+        for livre in livres:
+            note = livre["Note"] if livre["Note"] is not None else "Aucune"
+            print(f"ID: {livre['ID']} - Titre: {livre['Titre']} - Auteur: {livre['Auteur']} - Année: {livre['Année']} - Note: {note}")
