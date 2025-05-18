@@ -1,0 +1,15 @@
+def ajouter_livre(bibliotheque):
+    titre = input("Titre du livre : ")
+    auteur = input("Auteur du livre : ")
+    annee = int(input("Année de publication : "))
+    id_unique = len(bibliotheque) + 1  # ID unique basé sur la taille de la liste
+    livre = {
+        "ID": id_unique,
+        "Titre": titre,
+        "Auteur": auteur,
+        "Année": annee,
+        "Lu": False,
+        "Note": None
+    }
+    bibliotheque.append(livre)
+    print(f"Le livre '{titre}' a été ajouté.")
